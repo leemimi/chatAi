@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Getter
 @NoArgsConstructor
-public class ChatRequest {
+public class ChatMessageRequest {
     private String message;
     private String writerName;
 }

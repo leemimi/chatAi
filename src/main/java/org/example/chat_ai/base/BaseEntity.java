@@ -31,9 +31,6 @@ public class BaseEntity {
 
     @CreatedDate
     @Getter
-    private LocalDateTime createDate;
+    private LocalDateTime createdAt;
 
-    @LastModifiedDate
-    @Getter
-    private LocalDateTime modifyDate;
 }

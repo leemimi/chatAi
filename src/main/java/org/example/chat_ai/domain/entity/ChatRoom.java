@@ -26,5 +26,5 @@ public class ChatRoom extends BaseEntity {
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     @JsonIgnore
-    private List<Chat> messages = new ArrayList<>();
+    private List<ChatMessage> messages = new ArrayList<>();
 }

@@ -13,7 +13,7 @@ import org.example.chat_ai.base.BaseEntity;
 @AllArgsConstructor
 @SuperBuilder
 @Table(name = "chat")
-public class Chat extends BaseEntity {
+public class ChatMessage extends BaseEntity {
 
     @Column(nullable = false)
     private String writerName; // 작성자 이름

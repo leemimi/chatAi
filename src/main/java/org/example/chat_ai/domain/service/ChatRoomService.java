@@ -17,8 +17,7 @@ public class ChatRoomService {
     public ChatRoom createChatRoom (ChatRoomRequest chatRoomReq) {
         ChatRoom chatRoom = ChatRoom.builder()
                 .roomName(chatRoomReq.getRoomName())
-                .createDate(LocalDateTime.now())
-                .modifyDate(null)
+                .createdAt(LocalDateTime.now())
                 .build();
         return chatRoomRepository.save(chatRoom);
     }
