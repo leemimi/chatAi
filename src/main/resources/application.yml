@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  output:
+    ansi:
+      enabled: always
+  profiles:
+    active: dev
+    include: secret
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/chat_dev?serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
