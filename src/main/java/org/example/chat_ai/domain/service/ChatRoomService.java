@@ -1,7 +1,9 @@
 package org.example.chat_ai.domain.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.chat_ai.domain.dto.ChatRoomListResponse;
 import org.example.chat_ai.domain.dto.ChatRoomRequest;
+import org.example.chat_ai.domain.dto.ChatRoomResponse;
 import org.example.chat_ai.domain.entity.ChatRoom;
 import org.example.chat_ai.domain.repository.ChatRoomRepository;
 import org.springframework.stereotype.Service;
@@ -22,8 +24,18 @@ public class ChatRoomService {
         return chatRoomRepository.save(chatRoom);
     }
 
-    public List<ChatRoom> getChatRooms () {
-        return chatRoomRepository.findAll();
+    public ChatRoomListResponse getChatRooms () {
+        List<ChatRoom> all = chatRoomRepository.findAll();
+        ChatRoomListResponse chatRoomListResponse = ChatRoomListResponse.builder()
+                .chatRoomList(all.stream()
+                        .map(chatRoom -> ChatRoomResponse.builder()
+                                .id(chatRoom.getId())
+                                .name(chatRoom.getRoomName())
+                                .createdAt(chatRoom.getCreatedAt())
+                                .build())
+                        .toList())
+                .build();
+        return chatRoomListResponse;
     }
 
     public ChatRoom getChatRoom (Long roomId) {

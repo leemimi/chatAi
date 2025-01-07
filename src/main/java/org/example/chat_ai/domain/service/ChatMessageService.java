@@ -42,15 +42,16 @@ public class ChatMessageService {
 
 
     // 메시지 저장
-    public void saveMessage(Long roomId, String writerName, String message) {
+    public void saveMessage(Long roomId, ChatMessageRequest request) {
         ChatRoom chatRoom = chatRoomRepository.findById(roomId)
                 .orElseThrow(() -> new IllegalArgumentException("채팅방이 존재하지 않습니다."));
 
         ChatMessage chatMessage = ChatMessage.builder()
                 .room(chatRoom)
-                .writerName(writerName)
-                .message(message)
+                .writerName(request.getWriterName())
+                .message(request.getMessage())
                 .createdAt(LocalDateTime.now())
+                .isMyMessage(request.getIsMyMessage())
                 .build();
         chatMessageRepository.save(chatMessage);
     }
@@ -58,6 +59,17 @@ public class ChatMessageService {
     // afterId 이후의 메시지 조회
     public List<ChatMessageResponse> getMessagesAfter(Long roomId, Long afterId) {
         return chatMessageRepository.findByRoomIdAndIdGreaterThan(roomId, afterId)
+                .stream()
+                .map(chatMessage -> ChatMessageResponse.builder()
+                        .roomId(chatMessage.getRoom().getId())
+                        .writerName(chatMessage.getWriterName())
+                        .message(chatMessage.getMessage())
+                        .build())
+                .collect(Collectors.toList());
+    }
+
+    public List<ChatMessageResponse> getMessages (Long roomId) {
+        return chatMessageRepository.findByRoomId(roomId)
                 .stream()
                 .map(chatMessage -> ChatMessageResponse.builder()
                         .roomId(chatMessage.getRoom().getId())

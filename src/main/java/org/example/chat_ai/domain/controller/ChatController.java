@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.example.chat_ai.base.RsData;
 import org.example.chat_ai.domain.dto.ChatMessageRequest;
 import org.example.chat_ai.domain.dto.ChatMessageResponse;
+import org.example.chat_ai.domain.dto.ChatRoomListResponse;
 import org.example.chat_ai.domain.dto.ChatRoomRequest;
 import org.example.chat_ai.domain.entity.ChatRoom;
 import org.example.chat_ai.domain.service.ChatRoomService;
@@ -27,14 +28,22 @@ public class ChatController {
     }
 
     @GetMapping("/rooms")
-    public RsData<List<ChatRoom>> getRooms() {
+    public RsData<ChatRoomListResponse> getRooms() {
         return RsData.of("200", "채팅방 목록 조회 완료", chatRoomService.getChatRooms());
     }
 
-    @GetMapping("/rooms/{roomId}")
-    public RsData<ChatRoom> getRoom(@PathVariable Long roomId) {
-        return RsData.of("200", "채팅방 조회 완료", chatRoomService.getChatRoom(roomId));
+    @GetMapping("/rooms/{roomId}/messages")
+    public RsData<List<ChatMessageResponse>> getRoomMessages(@PathVariable Long roomId) {
+        List<ChatMessageResponse> messages = chatMessageService.getMessages(roomId);
+        return RsData.of("200", "메시지 목록 조회 완료", messages);
     }
+//    @PostMapping("/rooms/{roomId}/messages")
+//    public RsData<Void> postMessage(@PathVariable Long roomId, @RequestBody ChatMessageRequest request) {
+//        // 메시지 저장
+//        chatMessageService.saveMessage(roomId, request.getWriterName(), request.getMessage());
+//        return RsData.of("200", "메시지 저장 완료");
+//    }
+
 
     @PostMapping("/rooms/{roomId}/messagesAfter/{afterId}")
     public RsData<List<ChatMessageResponse>> getMessagesAfter(

@@ -17,16 +17,16 @@ public class NotProd {
     @Bean
     public ApplicationRunner initNotProd(ChatRoomService chatRoomService) {
         return args -> {
-            ChatRoomRequest chatRoomRequest = new ChatRoomRequest();
-            chatRoomRequest.setRoomName("공부");
-            ChatRoom chatRoom1 = chatRoomService.createChatRoom(chatRoomRequest);
-            chatRoomRequest.setRoomName("20대 채팅방");
-
-            ChatRoom chatRoom2 = chatRoomService.createChatRoom(chatRoomRequest);
-            chatRoomRequest.setRoomName("50대 채팅방");
-            ChatRoom chatRoom3 = chatRoomService.createChatRoom(chatRoomRequest);
-//            IntStream.rangeClosed(1, 100).forEach(num -> {
-//            });
+//            ChatRoomRequest chatRoomRequest = new ChatRoomRequest();
+//            chatRoomRequest.setRoomName("공부");
+//            ChatRoom chatRoom1 = chatRoomService.createChatRoom(chatRoomRequest);
+//            chatRoomRequest.setRoomName("20대 채팅방");
+//
+//            ChatRoom chatRoom2 = chatRoomService.createChatRoom(chatRoomRequest);
+//            chatRoomRequest.setRoomName("50대 채팅방");
+//            ChatRoom chatRoom3 = chatRoomService.createChatRoom(chatRoomRequest);
+////            IntStream.rangeClosed(1, 100).forEach(num -> {
+////            });
 
 
             System.out.println("Not Prod");

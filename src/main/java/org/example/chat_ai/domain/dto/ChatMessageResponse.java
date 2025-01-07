@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class ChatMessageResponse {
     private Long roomId;
     private String message; // 질문
-    private String aiResponse; // 응답
     private String writerName; // 작성자
+    private String createdAt; // 작성시간
+    private boolean isMyMessage;
 }

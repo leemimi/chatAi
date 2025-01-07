@@ -28,4 +28,5 @@ public class ChatMessage extends BaseEntity {
     @JoinColumn(name = "room_id", nullable = false)
     private ChatRoom room;
 
+    private boolean isMyMessage;
 }

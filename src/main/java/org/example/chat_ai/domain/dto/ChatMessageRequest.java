@@ -10,4 +10,10 @@ import lombok.NoArgsConstructor;
 public class ChatMessageRequest {
     private String message;
     private String writerName;
+    private String createdAt; // 작성시간
+    private boolean isMyMessage;
+
+    public boolean getIsMyMessage() {
+        return isMyMessage;
+    }
 }
