@@ -28,7 +28,6 @@ public class ChatMessageService {
                 .room(getChatRoom(roomId))
                 .message(chatMessageRequest.getMessage())
                 .writerName(chatMessageRequest.getWriterName())
-                .aiResponse(response)
                 .createdAt(LocalDateTime.now())
                 .build();
 
@@ -78,4 +77,18 @@ public class ChatMessageService {
                         .build())
                 .collect(Collectors.toList());
     }
+
+//    public void saveMessage (Long roomId, String writerName, String message) {
+//        ChatRoom chatRoom = chatRoomRepository.findById(roomId)
+//                .orElseThrow(() -> new IllegalArgumentException("채팅방이 존재하지 않습니다."));
+//
+//        ChatMessage chatMessage = ChatMessage.builder()
+//                .room(chatRoom)
+//                .writerName(writerName)
+//                .message(message)
+//                .createdAt(LocalDateTime.now())
+//                .isMyMessage()
+//                .build();
+//        chatMessageRepository.save(chatMessage);
+//    }
 }

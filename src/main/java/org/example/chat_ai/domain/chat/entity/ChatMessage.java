@@ -21,9 +21,6 @@ public class ChatMessage extends BaseEntity {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String message;
 
-    @Column(length = 1000)
-    private String aiResponse;
-
     @ManyToOne
     @JoinColumn(name = "room_id", nullable = false)
     private ChatRoom room;
