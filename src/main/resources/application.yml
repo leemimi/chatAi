@@ -1,6 +1,8 @@
 server:
   port: 8070
 spring:
+  websocket:
+    enabled: true
   output:
     ansi:
       enabled: always
@@ -22,3 +24,7 @@ spring:
       org.hibernate.orm.jdbc.bind: TRACE
       org.hibernate.orm.jdbc.extract: TRACE
       org.springframework.transaction.interceptor: TRACE
+      org:springframework:web:socket=DEBUG:
+      org.springframework:
+        web.socket: DEBUG
+        messaging: DEBUG
