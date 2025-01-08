@@ -1,4 +1,4 @@
-package org.example.chat_ai.domain.entity;
+package org.example.chat_ai.domain.chat.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

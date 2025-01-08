@@ -1,10 +1,8 @@
-package org.example.chat_ai.domain.repository;
+package org.example.chat_ai.domain.chat.repository;
 
-import org.example.chat_ai.domain.entity.ChatMessage;
-import org.example.chat_ai.domain.entity.ChatRoom;
+import org.example.chat_ai.domain.chat.entity.ChatMessage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Arrays;
 import java.util.List;
 
 public interface ChatMessageRepository extends JpaRepository<ChatMessage, Long> {

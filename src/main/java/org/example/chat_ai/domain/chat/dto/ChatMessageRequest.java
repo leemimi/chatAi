@@ -1,4 +1,4 @@
-package org.example.chat_ai.domain.dto;
+package org.example.chat_ai.domain.chat.dto;
 
 import lombok.Data;
 import lombok.Getter;

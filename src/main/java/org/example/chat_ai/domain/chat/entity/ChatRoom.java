@@ -1,4 +1,4 @@
-package org.example.chat_ai.domain.entity;
+package org.example.chat_ai.domain.chat.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

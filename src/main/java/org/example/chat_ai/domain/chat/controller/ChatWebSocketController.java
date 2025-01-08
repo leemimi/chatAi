@@ -1,10 +1,10 @@
-package org.example.chat_ai.domain.controller;
+package org.example.chat_ai.domain.chat.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.example.chat_ai.domain.dto.ChatMessageRequest;
-import org.example.chat_ai.domain.dto.ChatMessageResponse;
-import org.example.chat_ai.domain.service.ChatMessageService;
+import org.example.chat_ai.domain.chat.dto.ChatMessageRequest;
+import org.example.chat_ai.domain.chat.dto.ChatMessageResponse;
+import org.example.chat_ai.domain.chat.service.ChatMessageService;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;

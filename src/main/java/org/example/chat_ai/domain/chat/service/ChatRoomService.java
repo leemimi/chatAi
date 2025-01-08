@@ -1,11 +1,11 @@
-package org.example.chat_ai.domain.service;
+package org.example.chat_ai.domain.chat.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.chat_ai.domain.dto.ChatRoomListResponse;
-import org.example.chat_ai.domain.dto.ChatRoomRequest;
-import org.example.chat_ai.domain.dto.ChatRoomResponse;
-import org.example.chat_ai.domain.entity.ChatRoom;
-import org.example.chat_ai.domain.repository.ChatRoomRepository;
+import org.example.chat_ai.domain.chat.dto.ChatRoomListResponse;
+import org.example.chat_ai.domain.chat.dto.ChatRoomRequest;
+import org.example.chat_ai.domain.chat.dto.ChatRoomResponse;
+import org.example.chat_ai.domain.chat.entity.ChatRoom;
+import org.example.chat_ai.domain.chat.repository.ChatRoomRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

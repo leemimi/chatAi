@@ -16,3 +16,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  logging:
+    level:
+      com.example.chat_ai: DEBUG
+      org.hibernate.orm.jdbc.bind: TRACE
+      org.hibernate.orm.jdbc.extract: TRACE
+      org.springframework.transaction.interceptor: TRACE

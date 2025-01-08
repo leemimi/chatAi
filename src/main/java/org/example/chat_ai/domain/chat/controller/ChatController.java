@@ -1,14 +1,13 @@
-package org.example.chat_ai.domain.controller;
+package org.example.chat_ai.domain.chat.controller;
 
 import lombok.AllArgsConstructor;
 import org.example.chat_ai.base.RsData;
-import org.example.chat_ai.domain.dto.ChatMessageRequest;
-import org.example.chat_ai.domain.dto.ChatMessageResponse;
-import org.example.chat_ai.domain.dto.ChatRoomListResponse;
-import org.example.chat_ai.domain.dto.ChatRoomRequest;
-import org.example.chat_ai.domain.entity.ChatRoom;
-import org.example.chat_ai.domain.service.ChatRoomService;
-import org.example.chat_ai.domain.service.ChatMessageService;
+import org.example.chat_ai.domain.chat.dto.ChatMessageResponse;
+import org.example.chat_ai.domain.chat.dto.ChatRoomListResponse;
+import org.example.chat_ai.domain.chat.dto.ChatRoomRequest;
+import org.example.chat_ai.domain.chat.entity.ChatRoom;
+import org.example.chat_ai.domain.chat.service.ChatRoomService;
+import org.example.chat_ai.domain.chat.service.ChatMessageService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
