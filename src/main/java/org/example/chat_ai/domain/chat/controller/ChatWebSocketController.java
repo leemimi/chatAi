@@ -19,7 +19,7 @@ public class ChatWebSocketController {
     private final SimpMessagingTemplate messagingTemplate;
 
     @MessageMapping("/chat/{roomId}")
-    @SendTo("/topic/room.{roomId}")
+
     public void sendMessage(@DestinationVariable Long roomId, ChatMessageRequest chatMessageRequest) {
         ChatMessageResponse response = ChatMessageResponse.builder()
                 .roomId(roomId)
