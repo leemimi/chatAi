@@ -1,22 +1,20 @@
 package org.example.chat_ai.domain.article.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.example.chat_ai.base.BaseEntity;
 import org.example.chat_ai.domain.member.entity.Member;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
+@Setter
 @Table(name = "article")
 public class Article extends BaseEntity {
 
@@ -26,4 +24,22 @@ public class Article extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
+
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+    @Builder.Default
+    @ToString.Exclude
+    private List<ArticleComment> comments = new ArrayList<>();
+
+    public void addComment(Member memberAuthor, String commentBody) {
+        ArticleComment articleComment = ArticleComment.builder()
+                .article(this)
+                .author(memberAuthor)
+                .body(commentBody)
+                .build();
+        comments.add(articleComment);
+    }
+
+    public void removeComment(ArticleComment comment) {
+        comments.remove(comment);
+    }
 }

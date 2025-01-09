@@ -28,6 +28,6 @@ public class ChatWebSocketController {
                 .build();
 
         // /topic/room.{roomId} 형식으로 메시지 전송
-        messagingTemplate.convertAndSend("/topic/room." + roomId, response);
+        messagingTemplate.convertAndSend("/topic/room/" + roomId, response);
     }
 }

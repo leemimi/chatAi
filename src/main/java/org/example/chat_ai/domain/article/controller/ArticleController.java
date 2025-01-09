@@ -16,7 +16,7 @@ public class ArticleController {
 
     @PostMapping("/write")
     public RsData<Article> write(String title, String content, Long memberId) {
-        RsData<Article> write = articleService.write(title, content, memberId);
+        RsData<Article> write = articleService.write(memberId, title, content);
         return RsData.of("200", "게시글 작성 완료", write.getData());
     }
 }
