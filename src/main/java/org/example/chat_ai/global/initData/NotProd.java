@@ -1,4 +1,4 @@
-package org.example.chat_ai.base.initData;
+package org.example.chat_ai.global.initData;
 
 import lombok.RequiredArgsConstructor;
 import org.example.chat_ai.domain.article.entity.Article;
@@ -8,7 +8,6 @@ import org.example.chat_ai.domain.member.service.MemberService;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,15 +17,15 @@ import java.util.stream.IntStream;
 @Configuration
 @RequiredArgsConstructor
 public class NotProd {
-    @Lazy
-    private NotProd self;
+
+
     private final MemberService memberService;
     private final ArticleService articleService;
 
     @Bean
     public ApplicationRunner initNotProdData() {
         return args -> {
-            self.work1();
+            work1();
         };
     }
 

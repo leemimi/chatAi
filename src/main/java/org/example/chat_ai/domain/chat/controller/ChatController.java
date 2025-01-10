@@ -1,7 +1,7 @@
 package org.example.chat_ai.domain.chat.controller;
 
 import lombok.AllArgsConstructor;
-import org.example.chat_ai.base.RsData;
+import org.example.chat_ai.global.base.RsData;
 import org.example.chat_ai.domain.chat.dto.ChatMessageRequest;
 import org.example.chat_ai.domain.chat.dto.ChatMessageResponse;
 import org.example.chat_ai.domain.chat.dto.ChatRoomListResponse;

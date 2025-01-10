@@ -1,4 +1,4 @@
-package org.example.chat_ai.base.jpa;
+package org.example.chat_ai.global.jpa;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

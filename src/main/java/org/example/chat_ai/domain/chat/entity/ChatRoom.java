@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.example.chat_ai.base.BaseEntity;
+import org.example.chat_ai.global.base.BaseEntity;
 
 import java.util.ArrayList;
 import java.util.List;

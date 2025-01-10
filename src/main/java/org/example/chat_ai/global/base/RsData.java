@@ -1,4 +1,4 @@
-package org.example.chat_ai.base;
+package org.example.chat_ai.global.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

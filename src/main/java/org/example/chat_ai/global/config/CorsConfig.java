@@ -1,4 +1,4 @@
-package org.example.chat_ai.base.config;
+package org.example.chat_ai.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

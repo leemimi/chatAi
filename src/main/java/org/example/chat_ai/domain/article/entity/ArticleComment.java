@@ -2,10 +2,9 @@ package org.example.chat_ai.domain.article.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.example.chat_ai.base.BaseEntity;
+import org.example.chat_ai.global.base.BaseEntity;
 import org.example.chat_ai.domain.member.entity.Member;
 
 @Entity

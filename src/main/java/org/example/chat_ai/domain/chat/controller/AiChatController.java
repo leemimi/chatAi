@@ -1,9 +1,6 @@
 package org.example.chat_ai.domain.chat.controller;
 
 import lombok.AllArgsConstructor;
-import org.example.chat_ai.base.RsData;
-import org.example.chat_ai.domain.chat.dto.ChatMessageRequest;
-import org.example.chat_ai.domain.chat.service.ChatMessageService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

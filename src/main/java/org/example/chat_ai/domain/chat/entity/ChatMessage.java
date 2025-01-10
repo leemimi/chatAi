@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.example.chat_ai.base.BaseEntity;
+import org.example.chat_ai.global.base.BaseEntity;
 
 @Getter
 @Entity

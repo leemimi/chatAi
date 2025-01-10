@@ -1,7 +1,7 @@
 package org.example.chat_ai.domain.member.service;
 
 import jakarta.transaction.Transactional;
-import org.example.chat_ai.base.RsData;
+import org.example.chat_ai.global.base.RsData;
 import org.example.chat_ai.domain.article.entity.Article;
 import org.example.chat_ai.domain.article.entity.ArticleComment;
 import org.example.chat_ai.domain.article.service.ArticleService;
@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

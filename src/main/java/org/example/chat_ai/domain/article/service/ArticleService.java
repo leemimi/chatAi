@@ -2,18 +2,15 @@ package org.example.chat_ai.domain.article.service;
 
 
 import lombok.AllArgsConstructor;
-import org.example.chat_ai.base.RsData;
+import org.example.chat_ai.global.base.RsData;
 import org.example.chat_ai.domain.article.entity.Article;
 import org.example.chat_ai.domain.article.entity.ArticleComment;
 import org.example.chat_ai.domain.article.repository.ArticleRepository;
 import org.example.chat_ai.domain.member.entity.Member;
 import org.example.chat_ai.domain.member.repository.MemberRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service

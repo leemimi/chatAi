@@ -3,7 +3,7 @@ package org.example.chat_ai.domain.article.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.example.chat_ai.base.BaseEntity;
+import org.example.chat_ai.global.base.BaseEntity;
 import org.example.chat_ai.domain.member.entity.Member;
 
 import java.util.ArrayList;
