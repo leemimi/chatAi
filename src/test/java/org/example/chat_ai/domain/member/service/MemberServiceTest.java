@@ -14,6 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -90,5 +92,13 @@ public class MemberServiceTest {
 
         article.removeComment(lastComment);
     }
-
+//    @DisplayName("게시물 별 댓글 수 출력")
+//    @Test
+//    void t8() {
+//        List<Article> articles = articleService.findAll();
+//        articles.forEach(article -> {
+//            System.out.println("게시물 번호: " + article.getId());
+//            System.out.println("댓글 수: " + article.getComments().size());
+//        });
+//    }
 }

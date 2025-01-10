@@ -1,6 +1,7 @@
 package org.example.chat_ai.domain.member.service;
 
 import jakarta.transaction.Transactional;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.example.chat_ai.base.RsData;
 import org.example.chat_ai.domain.member.entity.Member;

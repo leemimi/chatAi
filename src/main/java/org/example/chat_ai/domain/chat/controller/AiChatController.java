@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class AiChatController {
     //룸은 이따가 수정하기
-    private final ChatMessageService chatMessageService;
-    @PostMapping("/rooms/{roomId}/messages")
-    @ResponseBody
-    public RsData<String> sendMessage(@PathVariable Long roomId, @RequestBody ChatMessageRequest chatMessageRequest) {
-        return RsData.of("200", "메시지 전송 완료", chatMessageService.sendAiMessage(roomId, chatMessageRequest));
-    }
+//    private final ChatMessageService chatMessageService;
+//    @PostMapping("/rooms/{roomId}/messages")
+//    @ResponseBody
+//    public RsData<String> sendMessage(@PathVariable Long roomId, @RequestBody ChatMessageRequest chatMessageRequest) {
+//        return RsData.of("200", "메시지 전송 완료", chatMessageService.sendAiMessage(roomId, chatMessageRequest));
+//    }
 
 //    @GetMapping("/rooms/{roomId}/messages")
 //    @ResponseBody
