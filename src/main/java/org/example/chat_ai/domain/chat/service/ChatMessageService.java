@@ -7,7 +7,7 @@ import org.example.chat_ai.domain.chat.entity.ChatMessage;
 import org.example.chat_ai.domain.chat.entity.ChatRoom;
 import org.example.chat_ai.domain.chat.repository.ChatMessageRepository;
 import org.example.chat_ai.domain.chat.repository.ChatRoomRepository;
-import org.springframework.ai.openai.OpenAiChatModel;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,23 +17,23 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class ChatMessageService {
-    private final OpenAiChatModel openAiChatModel;
+//    private final OpenAiChatModel openAiChatModel;
     private final ChatMessageRepository chatMessageRepository;
     private final ChatRoomRepository chatRoomRepository;
 
-    public String sendAiMessage (Long roomId, ChatMessageRequest chatMessageRequest) {
-        String response = openAiChatModel.call(chatMessageRequest.getMessage());
-
-        ChatMessage chatMessage = ChatMessage.builder()
-                .room(getChatRoom(roomId))
-                .message(chatMessageRequest.getMessage())
-                .writerName(chatMessageRequest.getWriterName())
-                .createdAt(LocalDateTime.now())
-                .build();
-
-        chatMessageRepository.save(chatMessage);
-        return response;
-    }
+//    public String sendAiMessage (Long roomId, ChatMessageRequest chatMessageRequest) {
+//        String response = openAiChatModel.call(chatMessageRequest.getMessage());
+//
+//        ChatMessage chatMessage = ChatMessage.builder()
+//                .room(getChatRoom(roomId))
+//                .message(chatMessageRequest.getMessage())
+//                .writerName(chatMessageRequest.getWriterName())
+//                .createdAt(LocalDateTime.now())
+//                .build();
+//
+//        chatMessageRepository.save(chatMessage);
+//        return response;
+//    }
 
     private ChatRoom getChatRoom (Long roomId) {
         return chatRoomRepository.findById(roomId).orElseThrow();
