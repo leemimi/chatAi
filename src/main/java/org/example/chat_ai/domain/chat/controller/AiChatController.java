@@ -1,14 +1,11 @@
-package org.example.chat_ai.domain.controller;
+package org.example.chat_ai.domain.chat.controller;
 
 import lombok.AllArgsConstructor;
 import org.example.chat_ai.base.RsData;
-import org.example.chat_ai.domain.dto.ChatMessageRequest;
-import org.example.chat_ai.domain.dto.ChatMessageResponse;
-import org.example.chat_ai.domain.service.ChatMessageService;
-import org.springframework.stereotype.Service;
+import org.example.chat_ai.domain.chat.dto.ChatMessageRequest;
+import org.example.chat_ai.domain.chat.service.ChatMessageService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 @RestController
 @RequestMapping("/api/v1/ai_chat")
 @AllArgsConstructor

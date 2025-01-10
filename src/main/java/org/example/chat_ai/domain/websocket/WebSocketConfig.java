@@ -1,6 +1,7 @@
 package org.example.chat_ai.domain.websocket;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.ChannelRegistration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
@@ -12,14 +13,20 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic"); // 메시지를 구독할 경로
-        config.setApplicationDestinationPrefixes("/app"); // 클라이언트가 메시지를 보낼 경로
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
-                .setAllowedOriginPatterns("*") // 필요한 도메인을 설정하거나 "*"로 모든 도메인 허용
-                .withSockJS(); // SockJS 지원
+                .setAllowedOriginPatterns("*")
+                .withSockJS();
+    }
+    @Override
+    public void configureClientInboundChannel(ChannelRegistration registration) {
+        registration.taskExecutor().corePoolSize(2);
+        registration.taskExecutor().maxPoolSize(10);
+        registration.taskExecutor().keepAliveSeconds(60);
     }
 }

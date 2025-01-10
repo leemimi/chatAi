@@ -1,6 +1,8 @@
 server:
   port: 8070
 spring:
+  websocket:
+    enabled: true
   output:
     ansi:
       enabled: always
@@ -14,5 +16,15 @@ spring:
     password: 1234
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
+  logging:
+    level:
+      com.example.chat_ai: DEBUG
+      org.hibernate.orm.jdbc.bind: TRACE
+      org.hibernate.orm.jdbc.extract: TRACE
+      org.springframework.transaction.interceptor: TRACE
+      org:springframework:web:socket=DEBUG:
+      org.springframework:
+        web.socket: DEBUG
+        messaging: DEBUG

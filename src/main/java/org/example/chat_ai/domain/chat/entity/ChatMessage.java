@@ -1,4 +1,4 @@
-package org.example.chat_ai.domain.entity;
+package org.example.chat_ai.domain.chat.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,9 +20,6 @@ public class ChatMessage extends BaseEntity {
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String message;
-
-    @Column(length = 1000)
-    private String aiResponse;
 
     @ManyToOne
     @JoinColumn(name = "room_id", nullable = false)
